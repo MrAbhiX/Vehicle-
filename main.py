@@ -73,8 +73,8 @@ def errr(client, message):
         chrome_options.add_argument("--test-type")
         chrome_options.add_argument("--headless")
         chrome_options.add_argument('--disable-gpu')
-        driver = webdriver.Chrome(ChromeDriverManager().install())
-        driver = webdriver.Chrome(executable_path="/app/.chromedriver/bin/chromedriver", options=chrome_options)
+        driver = ""
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install())", options=chrome_options)
         driver.get("https://parivahan.gov.in/rcdlstatus")
 
         first = driver.find_element_by_xpath("//input[@placeholder='DL10ABC']")
