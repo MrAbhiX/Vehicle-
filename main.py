@@ -21,6 +21,8 @@ app = Client(
 
 os.system('pip install webdriver-manager')
 os.system('apt-get install -y chromium-browser')
+os.system('apt-get install -y libglib2.0 libnss3 libgconf-2-4 libfontconfig1')
+
 
 @app.on_message(filters.command(["start"]))
 def start(client, message):
