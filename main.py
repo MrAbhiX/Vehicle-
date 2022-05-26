@@ -19,8 +19,8 @@ app = Client(
 )
 
 
-os.system("pip install webdriver-manager")
-
+os.system('pip install webdriver-manager')
+os.system('apt-get install -y chromium-browser')
 
 @app.on_message(filters.command(["start"]))
 def start(client, message):
