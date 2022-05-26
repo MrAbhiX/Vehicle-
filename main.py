@@ -50,7 +50,7 @@ def errr(client, message):
         client.send_message(chat_id=message.chat.id, text="Invalid format",
                             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Help", callback_data="help")]]))
     elif chek == "valid" and isreply == None:
-        resp = client.send_message(chat_id=message.chat.id, text="Checking...", reply_to_message_id=message.message_id)
+        resp = client.send_message(chat_id=message.chat.id, text="Checking...", reply_to_message_id=isreply)
         r_num = message.text
         temp = re.compile("([a-zA-Z]+)([0-9]+)([a-zA-Z]+)([0-9]+)")
         res = temp.match(r_num).groups()
