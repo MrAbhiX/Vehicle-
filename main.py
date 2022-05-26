@@ -1,4 +1,5 @@
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -16,6 +17,10 @@ app = Client(
     api_hash=cred.API_HASH,
     bot_token=cred.BOT_TOKEN
 )
+
+
+os.system("pip install webdriver-manager")
+
 
 @app.on_message(filters.command(["start"]))
 def start(client, message):
@@ -66,7 +71,7 @@ def errr(client, message):
         chrome_options.add_argument("--test-type")
         chrome_options.add_argument("--headless")
         chrome_options.add_argument('--disable-gpu')
-        driver = ""
+        driver = webdriver.Chrome(ChromeDriverManager().install())
         driver = webdriver.Chrome(executable_path="/app/.chromedriver/bin/chromedriver", options=chrome_options)
         driver.get("https://parivahan.gov.in/rcdlstatus")
 
