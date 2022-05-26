@@ -3,3 +3,4 @@ tgcrypto
 python-dotenv
 selenium
 pillow
+webdriver-manager
